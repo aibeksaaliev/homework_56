@@ -1,11 +1,18 @@
 import React from 'react';
 import './IngredientsMenu.css';
 import IngredientButton from "../IngredientButton/IngredientButton";
+import {Ingredient} from "../../types";
 
-const IngredientsMenu = () => {
+interface IngredientsMenuProps {
+  ingredients: Ingredient[];
+}
+
+const IngredientsMenu: React.FC<IngredientsMenuProps> = (props) => {
+  const getIngredients = props.ingredients.map(ingredient => <IngredientButton ingredient={ingredient}/>);
+
   return (
     <div className="ingredients_menu">
-      <IngredientButton/>
+      {getIngredients}
     </div>
   );
 };

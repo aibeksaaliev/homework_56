@@ -1,13 +1,18 @@
 import React from 'react';
 import './IngredientButton.css';
+import {Ingredient} from "../../types";
 
-const IngredientButton = () => {
+interface IngredientButtonProps {
+  ingredient: Ingredient;
+}
+
+const IngredientButton: React.FC<IngredientButtonProps> = (props) => {
   return (
     <div className="ingredient">
       <div className="ingredient_img">
-        <img src="https://crm-media-bucket.s3.amazonaws.com/media/2022-10-31/5b6a94cc-dee5-4165-b39d-c57b3047afb01667208332587.png" alt="ingredient"/>
+        <img src={props.ingredient.image} alt="ingredient"/>
       </div>
-      <span className="ingredient_name">Meat</span>
+      <span className="ingredient_name">{props.ingredient.name}</span>
       <span className="ingredient_counter">x1</span>
       <div className="buttons">
         <button className="add_ingredient_btn btn">
