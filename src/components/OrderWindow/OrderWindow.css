@@ -1,0 +1,7 @@
+.order_window {
+    width: 50%;
+    height: 95vh;
+    border: 2px solid firebrick;
+    display: flex;
+    align-items: center;
+}
