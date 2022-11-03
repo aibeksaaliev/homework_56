@@ -1,7 +1,11 @@
 .Meat {
-    width: 80%;
-    height: 8%;
-    background: linear-gradient(#7f3608, #702e05);
-    margin: 2% auto;
-    border-radius: 15px;
+    z-index: 9;
+    bottom: 2rem;
+    left: -0.35rem;
+    right: -0.35rem;
+    width: 97%;
+    height: 2rem;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #231e5f;
+    background: #7c3003;
 }

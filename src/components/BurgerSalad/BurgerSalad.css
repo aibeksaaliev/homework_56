@@ -1,7 +1,11 @@
 .Salad {
-    width: 85%;
-    height: 7%;
-    margin: 2% auto;
-    background: linear-gradient(#228c1d, #91ce50);
-    border-radius: 20px;
+    z-index: 9;
+    bottom: 2rem;
+    left: -0.35rem;
+    right: -0.35rem;
+    width: 97%;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #231e5f;
+    background: #15bf3f;
 }

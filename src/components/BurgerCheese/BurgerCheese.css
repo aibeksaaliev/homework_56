@@ -1,7 +1,11 @@
 .Cheese {
-    width: 90%;
-    height: 4.5%;
-    margin: 2% auto;
-    background: linear-gradient(#f4d004, #d6bb22);
-    border-radius: 20px;
+    z-index: 9;
+    bottom: 2rem;
+    left: -0.35rem;
+    right: -0.35rem;
+    width: 97%;
+    height: 1rem;
+    border-radius: 0.5rem;
+    border: 0.3rem solid #231e5f;
+    background: #feca08;
 }
