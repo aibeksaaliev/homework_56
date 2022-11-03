@@ -2,10 +2,11 @@ import React from 'react';
 import './IngredientButton.css';
 import {Ingredient} from "../../types";
 
-interface IngredientButtonProps {
+interface IngredientButtonProps extends React.PropsWithChildren {
   ingredient: Ingredient;
   onClick: React.MouseEventHandler;
   onClick2: React.MouseEventHandler;
+  amount: number;
 }
 
 const IngredientButton: React.FC<IngredientButtonProps> = (props) => {
@@ -15,7 +16,7 @@ const IngredientButton: React.FC<IngredientButtonProps> = (props) => {
         <img src={props.ingredient.image} alt="ingredient"/>
       </div>
       <span className="ingredient_name">{props.ingredient.name}</span>
-      <span className="ingredient_counter">x1</span>
+      <span className="ingredient_counter">x{props.amount}</span>
       <div className="buttons">
         <button className="add_ingredient_btn btn" onClick={props.onClick}>
           <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"

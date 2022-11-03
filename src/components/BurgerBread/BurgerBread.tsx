@@ -16,22 +16,23 @@ const BurgerBread: React.FC<BurgerBreadProps> = (props) => {
     props.ingredients.map(ing => {
       if (ing.name === "Meat") {
         for (let i = 0; i < ing.amount; i++) {
-          meat.push(<BurgerMeat key={i}/>);
+          meat.push(<BurgerMeat key={i + 2 * 3}/>);
         }
       } else if (ing.name === "Cheese") {
         for (let i = 0; i < ing.amount; i++) {
-          meat.push(<BurgerCheese key={i}/>);
+          meat.push(<BurgerCheese key={i + 5 * 57}/>);
         }
       } else if (ing.name === "Salad") {
         for (let i = 0; i < ing.amount; i++) {
-          meat.push(<BurgerSalad key={i}/>);
+          meat.push(<BurgerSalad key={i + 14 * 102}/>);
         }
       } else if (ing.name === "Bacon") {
         for (let i = 0; i < ing.amount; i++) {
-          meat.push(<BurgerBacon key={i}/>);
+          meat.push(<BurgerBacon key={i + 164 * 3}/>);
         }
       }
-    })
+      return props.ingredients;
+    });
     return meat;
   }
 

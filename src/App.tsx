@@ -3,7 +3,6 @@ import './App.css';
 import IngredientsMenu from "./components/IngredientsMenu/IngredientsMenu";
 import OrderWindow from "./components/OrderWindow/OrderWindow";
 import {Ingredient} from "./types";
-import {CurrentBurger} from "./types";
 import meatImg from './assets/5b6a94cc-dee5-4165-b39d-c57b3047afb01667208332587.png';
 import cheeseImg from './assets/c24ac2fb-de6c-493b-9483-b8ee1aedabfb1667208333820.png';
 import saladImg from './assets/eacd261f-01ce-47eb-a2ba-4f99a728086b1667208333650.png';
@@ -42,10 +41,32 @@ function App() {
     }));
   };
 
+  const getAmount = (name: string) => {
+    let amount: number = 0;
+    burgerIngredients.map(ingredient => {
+      if (name === ingredient.name) {
+        return amount = ingredient.amount;
+      }
+      return burgerIngredients;
+    });
+    return amount;
+  }
+
+  const getCost = INGREDIENTS.reduce((acc, ingredient) => {
+    burgerIngredients.map(currentIngredient => {
+      if (ingredient.name === currentIngredient.name) {
+        return acc += (ingredient.cost * currentIngredient.amount);
+      }
+      return burgerIngredients;
+    });
+    return acc;
+  },30);
+
+
   return (
     <div className="App">
-      <IngredientsMenu ingredients={INGREDIENTS} addIngredient={addIngredient} deleteIngredient={removeIngredient}/>
-      <OrderWindow current={burgerIngredients}/>
+      <IngredientsMenu ingredients={INGREDIENTS} addIngredient={addIngredient} deleteIngredient={removeIngredient} getAmount={getAmount}/>
+      <OrderWindow current={burgerIngredients} getCost={getCost}/>
     </div>
   );
 }
