@@ -38,7 +38,6 @@ const BurgerBread: React.FC<BurgerBreadProps> = (props) => {
 
   return (
     <div className="Burger">
-
       <div className="sesame">
         <div className="sesame-seed sesame-seed1 bounceInDown"></div>
         <div className="sesame-seed sesame-seed2 bounceInDown"></div>
@@ -51,15 +50,7 @@ const BurgerBread: React.FC<BurgerBreadProps> = (props) => {
         <div className="shadow shadow1"></div>
         <div className="shadow shadow2"></div>
       </div>
-
-
-
-      {/*<div className="BreadTop">*/}
-      {/*  <div className="Seeds1"></div>*/}
-      {/*  <div className="Seeds2"></div>*/}
-      {/*</div>*/}
       {getMeat()}
-      {/*<div className="BreadBottom"></div>*/}
       <div className="bun bottom"></div>
     </div>
   );
