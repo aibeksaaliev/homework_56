@@ -12,7 +12,7 @@ interface IngredientButtonProps extends React.PropsWithChildren {
 const IngredientButton: React.FC<IngredientButtonProps> = (props) => {
   return (
     <div className="ingredient">
-      <div className="ingredient_img">
+      <div className="ingredient_img" onClick={props.onClick}>
         <img src={props.ingredient.image} alt="ingredient"/>
       </div>
       <span className="ingredient_name">{props.ingredient.name}</span>

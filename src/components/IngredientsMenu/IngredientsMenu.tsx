@@ -1,7 +1,7 @@
 import React from 'react';
 import './IngredientsMenu.css';
-import IngredientButton from "../IngredientButton/IngredientButton";
 import {Ingredient} from "../../types";
+import IngredientButton from "../IngredientButton/IngredientButton";
 
 interface IngredientsMenuProps {
   ingredients: Ingredient[];
@@ -12,7 +12,14 @@ interface IngredientsMenuProps {
 
 const IngredientsMenu: React.FC<IngredientsMenuProps> = (props) => {
 
-  const getIngredients = props.ingredients.map(ingredient => <IngredientButton onClick={() => {props.addIngredient(ingredient.name)}} onClick2={() => {props.deleteIngredient(ingredient.name)}} key={ingredient.id} ingredient={ingredient} amount={props.getAmount(ingredient.name)}/>);
+  const getIngredients = props.ingredients.map(ingredient =>
+    <IngredientButton
+      onClick={() => {props.addIngredient(ingredient.name)}}
+      onClick2={() => {props.deleteIngredient(ingredient.name)}}
+      key={ingredient.id}
+      ingredient={ingredient}
+      amount={props.getAmount(ingredient.name)}
+    />);
 
   return (
     <div className="ingredients_menu">

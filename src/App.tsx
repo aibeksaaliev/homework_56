@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import './App.css';
+import {Ingredient} from "./types";
 import IngredientsMenu from "./components/IngredientsMenu/IngredientsMenu";
 import OrderWindow from "./components/OrderWindow/OrderWindow";
-import {Ingredient} from "./types";
 import meatImg from './assets/image_2022-11-03_15-23-34.png';
 import cheeseImg from './assets/image_2022-11-03_15-24-14.png';
 import saladImg from './assets/image_2022-11-03_15-24-50.png';
@@ -41,23 +41,19 @@ function App() {
     }));
   };
 
-  const getAmount = (name: string) => {
-    let amount: number = 0;
-    burgerIngredients.map(ingredient => {
-      if (name === ingredient.name) {
-        return amount = ingredient.amount;
-      }
-      return burgerIngredients;
-    });
-    return amount;
-  }
+  const getAmount = (name: string) => burgerIngredients.reduce((acc, ingredient) => {
+    if (name === ingredient.name) {
+      acc += ingredient.amount;
+    }
+    return acc;
+  }, 0);
+
 
   const getCost = INGREDIENTS.reduce((acc, ingredient) => {
-    burgerIngredients.map(currentIngredient => {
+    burgerIngredients.forEach(currentIngredient => {
       if (ingredient.name === currentIngredient.name) {
         return acc += (ingredient.cost * currentIngredient.amount);
       }
-      return burgerIngredients;
     });
     return acc;
   },30);
@@ -65,8 +61,16 @@ function App() {
 
   return (
     <div className="App">
-      <IngredientsMenu ingredients={INGREDIENTS} addIngredient={addIngredient} deleteIngredient={removeIngredient} getAmount={getAmount}/>
-      <OrderWindow current={burgerIngredients} getCost={getCost}/>
+      <IngredientsMenu
+        ingredients={INGREDIENTS}
+        addIngredient={addIngredient}
+        deleteIngredient={removeIngredient}
+        getAmount={getAmount}
+      />
+      <OrderWindow
+        current={burgerIngredients}
+        getCost={getCost}
+      />
     </div>
   );
 }

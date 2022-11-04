@@ -1,7 +1,7 @@
 import React from 'react';
 import './OrderWindow.css';
-import BurgerBread from "../BurgerBread/BurgerBread";
 import {CurrentBurger} from "../../types";
+import BurgerBread from "../BurgerBread/BurgerBread";
 import CostCounter from "../CostCounter/CostCounter";
 
 interface OrderWindowProps {

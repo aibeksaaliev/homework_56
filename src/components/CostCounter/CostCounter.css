@@ -1,0 +1,12 @@
+.cost_box {
+    width: 150px;
+    height: 30px;
+    margin: 0 auto;
+    background: #303c47;
+    border-radius: 10px;
+}
+
+.cost_box span {
+    line-height: 30px;
+    color: #fff;
+}
